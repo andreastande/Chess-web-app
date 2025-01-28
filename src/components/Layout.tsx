@@ -1,10 +1,13 @@
 import { Outlet } from "react-router"
+import Header from "./Header"
 
 const Layout = () => {
   return (
     <>
-      <div>Test</div>
-      <Outlet />
+      <Header />
+      <main className="bg-[#1C1C1D]">
+        <Outlet />
+      </main>
     </>
   )
 }
