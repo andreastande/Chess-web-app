@@ -1,12 +1,7 @@
-export const isTileBlack = (row: number, col: number) => {
-  return (row + col) % 2 === 1
-}
+export const isTileBlack = (coord: string) => {
+  const cols: Record<string, number> = { a: 0, b: 1, c: 2, d: 3, e: 4, f: 5, g: 6, h: 7 }
+  const col = cols[coord[0]]
+  const row = parseInt(coord[1])
 
-export const determineCorner = (row: number, col: number) => {
-  if (row === 0 && col === 0) return "tl" // Top-left
-  if (row === 0 && col === 7) return "tr" // Top-right
-  if (row === 7 && col === 0) return "bl" // Bottom-left
-  if (row === 7 && col === 7) return "br" // Bottom-right
-
-  return "" // Not a corner
+  return (row + col) % 2 !== 0
 }
